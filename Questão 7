@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+/*
+Elabore um algoritmo que leia dois vetores V1 e V2 de 10 posições cada e faça a multiplicação dos elementos 
+de mesmo índice, colocando o resultado em um terceiro vetor V3. Mostre o vetor resultante.   
+*/
+
+int main (){
+	
+	int vi[10], ve[10], va[10], e = -1, a = -1;
+	
+	for(int i = 0; i < 10; i++){
+		e++;
+		a++;
+		cout << "\tDigite o valor " << i + 1 << " do V1: ";
+		cin >> vi[i];
+		cout << "\tAgora digite o valor " << e + 1 << " do V2: ";
+		cin >> ve[e];
+		va[a] = vi[i] * ve[e];
+	}
+	cout << "\t\nVetor resultante: ";
+	for(int a = 0; a < 10; a++){
+		cout << va[a] << " ";
+	}
+}
