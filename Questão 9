@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+/*
+Elabore um algoritmo que leia um vetor A de 10 elementos e construa um vetor P formado pelos índices dos 
+elementos pares de A. Exemplo: Se A = [1  3  6  7  8], seus elementos pares estão nos índices 2 e 4 . Assim, P  
+=  [2  4]. 
+*/
+
+int main(){
+	
+	int va[10], vp[10], p = 0, p1 = 0;
+	
+	for(int a = 0; a < 10; a++){
+		cout << "\tDigite o valor " << a + 1 << " do vetor A: ";
+		cin >> va[a];
+		if(va[a] % 2 == 0){
+			vp[p] = a;
+			p++;
+			p1++;
+		}
+	}
+	cout << "\tResultado do Vetor A: ";
+	for(int a = 0; a < 10; a++){
+		cout << va[a] << " ";
+	}
+	cout << "\n\tResultado do Vetor P: ";
+	for(p = 0; p < p1; p++){
+		cout << vp[p] << " ";
+	}	
+}
