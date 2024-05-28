@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+/*
+Elabore um algoritmo que leia dois vetores, A (20 elementos inteiros) e B (20 elementos inteiros), e escreva 
+um terceiro vetor C contendo todos os elementos comuns aos dois vetores A e B.
+*/
+
+int main(){
+	
+	int va[20], vb[20], vc[20], b = -1, c = 0, c1 = 0;
+
+	for(int a = 0; a < 20; a++){
+		b++;
+		cout << "\tDigite o valor " << a + 1 << " do vetor A: ";
+		cin >> va[a];
+		cout << "\tAgora digite o valor " << b + 1 << " do vetor B: ";
+		cin >> vb[b];
+		if(va[a] == vb[b]){
+			vc[c] = va[a];
+			c1++;
+			c++;
+		}
+	}
+	cout << "\tVetor resultante: ";
+	for(int c = 0; c < c1; c++){
+		cout << vc[c] << " ";
+	} 
+}
