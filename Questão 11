@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+/*
+Elabore um algoritmo que preencha automaticamente um vetor de 20 posições de inteiros gerando os 
+elementos a partir da multiplicação do seu índice por 2. Em seguida, calcule e escreva a soma dos elementos 
+pares e impares.
+*/
+  
+int main(){
+	
+	int vetor[20], somaP = 0, somaI = 0;
+	
+	for(int i = 0; i < 20; i++){
+		vetor[i] = i * 2;
+		if(vetor[i]%2 == 0){
+			somaP = vetor[i] + somaP;
+		}else{
+			somaI = vetor[i] + somaI;
+		}
+	}
+	cout << "\tVetor resultante: ";
+	for(int i = 0; i < 20; i++){
+		cout << vetor[i] << " ";
+	}
+	cout << "\n\tSoma dos pares: " << somaP;
+	cout << "\n\tSoma dos impares: " << somaI;
+}
