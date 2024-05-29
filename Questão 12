@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+
+/*
+Elabore um algoritmo que leia um vetor V de 10 posições de inteiros, não permitindo que sejam digitados 
+números negativos. Em seguida, leia um número inteiro qualquer e verifique se o número existe no vetor. Se 
+existir, informe o seu índice. Se não existir, informe a mensagem “Número não localizado!”.  
+*/
+
+int main(){
+	
+	int vetor1[10], vetor2[10], f = 0, f1 = 0, num;
+	
+	for(int i = 0; i < 10; i++){
+		do{
+			cout << "\tDigite um numero inteiro para o indice " << i + 1 << " do vetor: ";
+			cin >> vetor1[i];
+			if(vetor1[i] < 0){
+			cout << "\tNumero invalido, digite novamente";
+			cout << "\n";
+			}
+		}while(vetor1[i] < 0);
+	}
+	cout << "\t---------------------------------------";
+	cout << "\n\tDigite um numero inteiro qualquer: ";
+	cin >> num;
+	for(int i = 0; i < 10; i++){
+		if(vetor1[i] == num){
+			vetor2[f] = i;
+			f++;
+			f1++;
+		}
+	}
+	if(f != 0){
+		cout << "\tEste numero existe dentro do vetor e esta no(s) indice(s): ";
+		for(f = 0; f < f1; f++){
+			cout << vetor2[f] + 1 << " ";
+		}
+	}else{
+		cout << "\tNumero nao localizado no vetor!";
+	}	
+}
