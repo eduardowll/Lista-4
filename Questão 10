@@ -1,0 +1,54 @@
+#include <iostream>
+using namespace std;
+
+/*
+Sejam A e B dois vetores contendo 10 elementos inteiros.  Elabore um algoritmo que:  
+a. Leia A e B.   
+b. Calcule a soma dos elementos de A.  
+c. Crie o vetor C contendo a soma dos elementos de mesma posição dos vetores A e B.   
+d. Calcule quantos elementos de A são maiores que a soma dos elementos de B.
+*/
+
+int main(){
+
+	int va[10], vb[10], b = 0, vc[10], somaA, somaB, maiorA = 0, a;
+
+	for(a = 0; a < 10; a++){
+		cout << "\tDigite o valor " << a + 1 << " do Vetor A: ";
+		cin >> va[a];
+		cout << "\tDigite o valor " << b + 1 << " do Vetor B: ";
+		cin >> vb[b];
+		if(a == 0){
+			somaA = va[a];
+		}
+		if(a >= 1){
+			somaA = somaA + va[a];
+		}
+		if(b == 0){
+			somaB = vb[b];
+		}
+		if(b >= 1){
+			somaB = somaB + vb[b];
+		}
+		b++;
+	}
+	for(int a = 0; a < 10; a++){
+		if(va[a] > somaB){
+			maiorA++;
+		}
+	}
+	a = 0;
+	b = 0;
+	for(int c = 0; c < 10; c++){
+		vc[c] = va[a] + vb[b];
+		a++;
+		b++;
+	}
+	cout << "\t----------------------------";
+	cout << "\n\ta. Soma dos elementos de A: " << somaA;
+	cout << "\n\tb. Soma dos elementos de mesmo indice entre A e B: ";
+	for(int c = 0; c < 10; c++){
+		cout << vc[c] << " ";
+	}
+	cout << "\n\tc. Quantidade de elementos de A maior que a soma dos elementos de B: " << maiorA;
+}
