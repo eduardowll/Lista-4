@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+/*
+Elabore um algoritmo que leia um vetor S contendo os salários dos funcionários de uma empresa com, no 
+máximo, 100 funcionários, sendo que para terminar a entrada será fornecido o valor -1. Após toda a entrada 
+ter sido realizada, leia o valor de um reajuste. Em seguida, gere e escreva um segundo vetor R contendo todos 
+os salários de S já reajustados. 
+*/
+
+int main(){
+	
+	int s = 100, vs[s], r = 100, vr[r], s1 = 0;
+	float reajuste;
+	
+	for(s = 0; s < 100; s++){
+		cout << "\tDigite o salario do funcionario " << s + 1 << " (ou -1 para terminar): ";
+		cin >> vs[s];
+		if(vs[s] == -1){
+			s = 101;
+		}else{
+			s1++;
+		}
+	}
+	cout << "\n\tDigite o valor do reajuste (em porcentagem): ";
+	cin >> reajuste;
+	reajuste = reajuste/100;
+	r = 0;
+	for(s = 0; s < s1; s++){
+		vr[r] = (vs[s] * reajuste) + vs[s];
+		r++;
+
+	}
+	for(r = 0; r < s1; r++){
+		cout << "\n\tSalario do funcionario " << r + 1 << " reajustado: " << vr[r];
+	}
+}
