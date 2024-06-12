@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+/*
+Elabore um algoritmo que declare dois vetores A e B de 10 elementos de inteiros, leia os seus elementos e 
+intercale os dois vetores A e B formando o vetor C (de 20 elementos).
+*/
+int main(){
+	
+	int va[10], vb[10], vc[20], a, b;
+	
+	for(a = 0; a < 10; a++){
+		cout << "\tDigite o elemento de indice " << a + 1 << " do vetor A: ";
+		cin >> va[a];
+	}
+	system ("cls");
+	for(b = 0; b < 10; b++){
+		cout << "\tDigite o elemento de indice " << b + 1 << " do vetor B: ";
+		cin >> vb[b];
+	}
+	system("cls");
+	a = 0;
+	b = 0;
+	for(int c = 0; c < 20; c++){
+		if(c % 2 == 0){
+			vc[c] = va[a];
+			a++;
+		}else{
+			vc[c] = vb[b];
+			b++;
+		}
+	}
+	cout << "\tVetor resultante: ";
+	for(int c = 0; c < 20; c++){
+		cout << vc[c] << " ";
+	}
+}
