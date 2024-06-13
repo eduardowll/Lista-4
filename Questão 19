@@ -1,0 +1,57 @@
+#include <iostream>
+using namespace std;
+
+/*
+Elabore um algoritmo que leia um vetor de 6 elementos inteiros representando o conjunto de números 
+sorteados na mega sena. Leia, a seguir, para cada um dos N apostadores, um vetor contendo os 6 números 
+da sua aposta. Verifique para cada apostador o seu número total de acertos na mega sena (para cada número 
+correto, o apostador ganha 1 acerto) e escrever se ele “não ganhou”, “ganhou a quadra”, “ganhou a quina” 
+ou “ganhou a mega”. O algoritmo deverá finalizar quando o usuário desejar.
+*/
+
+int main(){
+	
+	int vm[6], vn[6], m, cont = 0, controle;
+	
+	cout << "\t\tMEGA SENA - 2024 - SORTEADOR";
+	cout << "\n";
+	for(m = 0; m < 6; m++){
+		cout << "\tDigite o numero " << m + 1 << " da mega sena: ";
+		cin >> vm[m];
+	}
+	system ("cls");
+	cout << "\t\t\t\tMEGA SENA - 2024 - PARTICIPANTES\n";
+	do{
+		cout << "\tSeja Bem-Vindo ao sorteio da mega sena, para participar, digite os numeros de sua cartela!\n";
+		m = 0;
+		cont = 0;
+		for(int n = 0; n < 6; n++){
+			cout << "\tDigite o numero " << n + 1 << " da sua cartela: ";
+			cin >> vn[n];
+			for(m = 0; m < 6; m++){
+				if(vn[n] == vm[m]){
+				cont++;
+				}
+			}
+		}
+		if(cont == 6){
+			cout << "\tPARABENS VOCE GANHOU A MEGA!! Va em alguma agencia do seu banco para pegar o premio!\n";
+		}
+		if(cont == 5){
+			cout << "\tPARABENS VOCE GANHOU A QUINA!! Va em alguma agencia do seu banco para pegar o premio!\n";
+		}
+		if(cont == 4){
+			cout << "\tPARABENS VOCE GANHOU A QUADRA!! Va em alguma agencia do seu banco para pegar o premio!\n";
+		}
+		if(cont < 4){
+			cout << "\tVoce infelizmente nao ganhou nada\n";
+		}
+		cout << "\tObrigado, proxixmo participante!\n";
+		system ("pause");
+		system ("cls");
+		cout << "\t(para finalizar digite 2 e para continuar digite -1): ";
+		cin >> controle;
+		system ("cls");
+	}while(controle == -1);
+	cout << "\t\nSessao da MEGA SENA finalizada!";
+}
