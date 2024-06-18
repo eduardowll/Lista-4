@@ -1,0 +1,86 @@
+#include <iostream>
+using namespace std;
+
+/*
+Elabore um algoritmo que leia dois vetores de inteiros X e Y, cada um com 5 elementos (não permita 
+elementos repetidos dentro de um mesmo vetor). Em seguida calcule e escreva os seguintes vetores 
+resultantes: 
+a. Soma: soma dos elementos de X e Y de mesmo índice; 
+b. Distância: distância entre os elementos de X e Y de mesmo índice;
+*/
+
+int main(){
+	
+	int vx[5], vy[5], x1 = 0, x2 = 0, y1 = 0, y2 = 0, vxy[5];
+	bool repetidox = false, repetidoy = false;
+	
+	for(int x = 0; x < 5; x++){
+		cout << "\tDigite o elemento de indice " << x + 1 << " do vetor X: ";
+		if(x == 0){
+			cin >> x1;
+			vx[x] = x1;
+			x2++;
+		}else{
+			do{ 
+				cin >> x1;
+				for(int x = 0; x < x2; x++){
+					if(vx[x] == x1){
+						repetidox = true;
+						x = x2;
+					}else{
+						repetidox = false;
+					}
+				}
+				if(repetidox == true){
+					cout << "\tNumero repetido, digite outro: ";
+				}
+			}while(repetidox != false);
+			vx[x] = x1;
+			x2++;
+		}	
+	}
+	cout << "\n";
+	for(int y = 0; y < 5; y++){
+		cout << "\tDigite o elemento de indice " << y + 1 << " do vetor Y: ";
+		if(y == 0){
+			cin >> y1;
+			vy[y] = y1;
+			y2++;
+		}else{
+			do{ 
+				cin >> y1;
+				for(int y = 0; y < y2; y++){
+					if(vy[y] == y1){
+						repetidoy = true;
+						y = y2;
+					}else{
+						repetidoy = false;
+					}
+				}
+				if(repetidoy == true){
+					cout << "\tNumero repetido, digite outro: ";
+				}
+			}while(repetidoy != false);
+			vy[y] = y1;
+			y2++;
+		}	
+	}
+	cout << "\n\tA. Soma dos elementos de X e Y do mesmo indice: [ ";
+	int y = 0, x = 0;
+	for(int xy = 0; xy < 5; xy++){
+		vxy[xy]= vx[x] + vy[y];
+		y++;
+		x++;
+		cout << vxy[xy] << " ";
+	}
+	cout << "]";
+	cout << "\n\tB. Distancia entre os elementos de X e Y de mesmo indice: [ ";
+	y = 0;
+	x = 0;
+	for(int xy = 0; xy < 5; xy++){
+		vxy[xy]= vx[x] - vy[y];
+		y++;
+		x++;
+		cout << vxy[xy] << " ";
+	}
+}
