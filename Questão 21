@@ -1,0 +1,139 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+/*
+Elabore um algoritmo que gere automaticamente um vetor de 30 elementos contendo a sequencia de 
+números inteiros escolhida pelo usuário no menu abaixo: 
+Menu Principal 
+--------------------------------------------
+1 - Sequência de Fibonacci 
+2 - Números Triangulares 
+3 - Números Primos 
+4 - Números Quadrangulares 
+5 - Divisíveis por 3 e 5 simultaneamente 
+6 - Sair 
+*/
+
+int main(){
+	
+	int op, v1[30], b, a, i2 = 0, v2[30], aux, cont3, div, v3[114], i3 = 0, i4 = 0, v4[30], cont4 = 1, result, num = 15, i5, v5[100];
+    bool divisivel = false;
+	
+	do{
+		cout << "\tMenu Principal"; 
+		cout << "\n\t-----------------------------------------";
+		cout << "\n\t1 - Sequencia de Fibonacci";
+		cout << "\n\t2 - Numeros Triangulares";
+		cout << "\n\t3 - Numeros Primos";
+		cout << "\n\t4 - Numeros Quadrangulares";
+		cout << "\n\t5 - Divisiveis por 3 e 5 simultaneamente";
+		cout << "\n\t6 - Sair";
+		cout << "\n\tEscolha a opcao desejada: ";
+		cin >> op;
+		cout << "\n";
+		switch(op){
+			case 1:
+				cout << "\tSequencia de Fibonacci: [ ";
+				v1[0] = 0;
+				v1[1] = 1;
+				for(int i = 2; i < 30; i++){
+					v1[i] = v1[i-1] + v1[i-2];
+    			}
+    			for(int i = 1; i < 30; i++){
+    				if(i == 23){
+    					cout << "\n\t";
+					}
+    				cout << v1[i] << " ";
+				}
+				cout << "]";
+				cout << "\n\t";
+    		break;
+    		case 2:
+    			cout << "\tSequencia dos Numeros Triangulares: [ ";
+    			for(a = 1, b = 1; b < 440; a++){
+	    			v2[i2] = b;
+        			b = (a + 1) + b;
+					i2++;
+    			}
+    			for(i2 = 1; i2 < 30; i2++){
+    				if(i2 == 22){
+    					cout << "\n\t";
+					}
+					cout << v2[i2] << " ";
+				}
+				cout << "]";	
+    			cout << "\n\t";
+    		break;
+    		case 3:
+    			cout << "\tSequencia dos Numeros Primos: [ ";
+    			for(aux = 2; aux <= 114 ; aux++){
+        			div=0;
+        			for(cont3 = 2; cont3 <= sqrt(aux); cont3++){
+            			if(aux%cont3 == 0){
+            				div++;  
+						}
+					}
+        			if(!div){
+            			v3[i3] = aux;
+            			i3++;
+					}
+				}
+				for(i3 = 0; i3 < 30; i3++){
+					if(i3 == 26){
+    					cout << "\n\t";
+					}
+        			cout << v3[i3] << " ";
+				}
+				cout << "]";
+    			cout << "\n\t";
+    		break;
+    		case 4:
+    			cout << "\tSequencia dos Numeros Quadrangulares: [ ";
+    			for(i4 = 0; i4 < 30; i4++){
+					result = cont4*cont4;
+					v4[i4] = result;
+					cont4++;
+				}
+				for(i4 = 0; i4 < 30; i4++){
+					if(i4 == 20){
+    					cout << "\n\t";
+					}
+					cout << v4[i4] << " ";
+				}
+				cont4 = 1;
+				cout << " ]";
+    			cout << "\n\t";
+    		break;
+    		case 5:
+    			cout << "\tSequencia dos Numeros Divisiveis por 3 e por 5: [ ";
+    			for(i5 = 0; i5 < 100; i5++){
+					if((num%3 == 0) && (num%5 == 0)){
+						divisivel = true;
+					}else{
+						divisivel = false;
+					}
+					if(divisivel == true){						
+						v5[i5] = num;
+					}
+					num = num + 15;
+				}
+				for(i5 = 0; i5 < 30; i5++){
+					if(i5 == 15){
+    					cout << "\n\t";
+					}
+					cout << v5[i5] << " ";
+				}
+				num = 15;
+				cout << "]";
+    			cout << "\n\t";
+    		break;
+    		case 6:
+    			cout << "\tFIM DO PROGRAMA!";
+    			cout << "\n\t";
+    		break;
+		}
+		system("pause");
+		system("cls");
+	}while(op != 6);
+}
