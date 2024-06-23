@@ -1,0 +1,53 @@
+#include <iostream>
+using namespace std;
+
+/*
+Elabore um algoritmo que leia um vetor X de até 10 elementos. A leitura deverá ser executada até que o vetor 
+fique totalmente preenchido ou seja informado um valor negativo ou zero. Em seguida leia 2 valores de 
+índices representando um intervalo fechado no vetor (índice inicial e índice final). Finalmente o algoritmo 
+deverá escrever todos os elementos do vetor naquele  intervalo, o maior elemento, o menor elemento e a 
+média dos elementos.
+*/
+
+int main(){
+	
+	int vx[10], x, x1 = 0, inicial, final, vx2[10], i2 = 0, maior, menor, media, cont = 0;
+	
+	for(int i = 0; i < 10; i++){
+		cout << "\tDigite o elemento de indice " << i << " do vetor X (ou informe um valor negativo ou 0): ";
+		cin >> x;
+		if(x == 0 || x == -1){
+			i = 100;
+		}else{
+			vx[i] = x;
+			x1++;
+		}
+	}
+	cout << "\tDigite o indice inicial: ";
+	cin >> inicial;
+	cout << "\tDigite o indice final: ";
+	cin >> final;
+	cout << "\t-----------------------\n";
+	cout << "\tVetor resultante: ";
+	for(int i = inicial; i <= final; i++){	
+		if(i == inicial){
+			maior = vx[i];
+			menor = vx[i];
+		}
+		if(vx[i] > maior){
+			maior = vx[i];
+		}
+		if(vx[i] < menor){
+			menor = vx[i];
+		}
+		media = vx[i] + media;
+		cont++;
+		if(i == final){
+			media = media/cont;
+		}
+		cout << vx[i] << " ";
+	}
+	cout << "\n\tMaior elemento: " << maior;
+	cout << "\n\tMenor elemento: " << menor;
+	cout << "\n\tMedia dos elementos: " << media;
+}
