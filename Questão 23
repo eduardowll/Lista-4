@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+/*
+Elabore um algoritmo que leia os 9 primeiros elementos de um vetor de 10 elementos, um índice P (entre 0 
+e 8, não aceitar valores fora dessa faixa) e um número inteiro X. Em seguida inclua o valor de X na posição P 
+do vetor B fazendo com que os elementos existentes dentro do vetor (da posição P+1 em diante) sejam 
+deslocados de uma posição para o final (Considere que existe espaço no vetor para o deslocamento). Logo 
+após o processamento escrever o vetor B. 
+*/
+
+int main(){
+	
+	int vb[10], indice, x, aux = 0, aux1 = 0, cont = 0;
+	
+	for(int i = 0; i < 9; i++){
+		cout << "\tDigite o numero de indice " << i + 1 << " do vetor B: ";
+		cin >> vb[i];
+	}
+	do{
+		cout << "\tDigite o indice P (entre 0 e 8) para incluir o X: ";
+		cin >> indice;
+		if((indice < 0) || (indice > 8))
+			cout << "\tNumero invalido\n";
+	}while((indice <= 0) || (indice >= 8));
+	cout << "\tAgora digite o valor de X: ";
+	cin >> x;
+	cout << "\tVetor resultante: ";
+	for(int i = 0; i < 10; i++){
+		cont++;
+		if(i == indice){
+			aux1 = vb[i];
+			aux = vb[i];
+			vb[i] = x;
+		}
+		if(i > indice){
+			aux1 = vb[i];
+			vb[i] = aux;
+		}
+		aux = aux1;
+		cout << vb[i] << " ";
+	}
+}
